@@ -56,10 +56,68 @@ We appreciate your feedback! If you find any documentation issues:
 
 ### Prerequisites
 
-- Python 3.8+
-- Node.js 18+ and pnpm
+- **Python 3.8+** - Required for MkDocs and Python dependencies
+- **Node.js 18+** - Required for building and linting tools
+- **pnpm** - Node.js package manager (not included with Node.js by default)
+
+#### Installing Prerequisites
+
+**1. Install Python 3.8+**
+```bash
+# Check if Python is installed
+python3 --version
+
+# If not installed, install via your system package manager
+# Ubuntu/Debian:
+sudo apt-get install python3 python3-pip
+
+# macOS (with Homebrew):
+brew install python3
+```
+
+**2. Install Node.js 18+**
+```bash
+# Check if Node.js is installed
+node --version
+
+# If not installed, download from https://nodejs.org/
+# Or use a version manager like nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm install 18
+nvm use 18
+```
+
+**3. Install pnpm**
+
+pnpm is required but not automatically installed with Node.js. Choose one of the following methods:
+
+**Option 1: Official Installer (Recommended)**
+```bash
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+# After installation, reload your shell configuration:
+source ~/.bashrc  # or ~/.zshrc for zsh users
+```
+
+**Option 2: Using npm (if you have npm)**
+```bash
+npm install -g pnpm
+```
+
+**Option 3: Using corepack (Node.js 16.13+ built-in)**
+```bash
+corepack enable
+corepack prepare pnpm --activate
+```
+
+**Verify pnpm installation:**
+```bash
+pnpm --version
+```
 
 ### Get Started
+
+Once all prerequisites are installed:
 
 ```bash
 # Install dependencies
@@ -70,6 +128,8 @@ make serve
 ```
 
 Open **[http://127.0.0.1:8000](http://127.0.0.1:8000)** to preview the documentation.
+
+> **Note:** If you encounter "pnpm: command not found" error when running `make install`, please ensure pnpm is installed and available in your PATH. The Makefile will provide helpful error messages if pnpm is missing.
 
 ### Common Commands
 
